@@ -12,6 +12,8 @@
 		71AC018C2358AA15005C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AC018A2358AA15005C42BC /* LaunchScreen.storyboard */; };
 		71AC01952358AA68005C42BC /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC01942358AA68005C42BC /* Challenge.swift */; };
 		71AC01972358AA84005C42BC /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AC01962358AA84005C42BC /* Factories.swift */; };
+		D7511E062D2C366F003D5447 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7511E052D2C3667003D5447 /* RowView.swift */; };
+		D7511E082D2C384A003D5447 /* CrossfadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7511E072D2C3846003D5447 /* CrossfadeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		71AC018D2358AA15005C42BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71AC01942358AA68005C42BC /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		71AC01962358AA84005C42BC /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		D7511E052D2C3667003D5447 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		D7511E072D2C3846003D5447 /* CrossfadeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossfadeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		71AC017E2358AA14005C42BC /* CustomViewChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				D7511E072D2C3846003D5447 /* CrossfadeView.swift */,
+				D7511E052D2C3667003D5447 /* RowView.swift */,
 				71AC01932358AA30005C42BC /* Files */,
 				71AC017F2358AA14005C42BC /* AppDelegate.swift */,
 				71AC01942358AA68005C42BC /* Challenge.swift */,
@@ -145,6 +151,8 @@
 				71AC01972358AA84005C42BC /* Factories.swift in Sources */,
 				71AC01802358AA14005C42BC /* AppDelegate.swift in Sources */,
 				71AC01952358AA68005C42BC /* Challenge.swift in Sources */,
+				D7511E062D2C366F003D5447 /* RowView.swift in Sources */,
+				D7511E082D2C384A003D5447 /* CrossfadeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
