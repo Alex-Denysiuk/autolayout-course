@@ -27,7 +27,7 @@ class ScrollableView: UIViewController {
         for _ in 1...40 {
             let row = RowView()
             stackView.addArrangedSubview(row)
-            row.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+           // row.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         }
         
         // Pinning to the sides of view
@@ -35,6 +35,7 @@ class ScrollableView: UIViewController {
         stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
         // Pinning scrollview
         scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
