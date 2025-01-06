@@ -29,7 +29,7 @@ class PaddingView: UIViewController {
             stackView.addArrangedSubview(row)
             
             // Note: We need to adjust our width to take into account the extra padding on the side (16x2 = 32)
-            row.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32).isActive = true
+          //  row.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32).isActive = true
         }
         
         // Pinning to the sides of view
@@ -38,6 +38,7 @@ class PaddingView: UIViewController {
         stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         // for padding and spacing
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 40, leading: 16, bottom: 40, trailing: 16)
