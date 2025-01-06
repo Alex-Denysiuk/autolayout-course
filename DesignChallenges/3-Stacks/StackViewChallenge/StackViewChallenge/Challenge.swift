@@ -45,6 +45,13 @@ class Challenge: UIViewController {
      
      */
     func setupViews() {
+        let scrollView = makeScrollView()
+        let stackView = makeStackView(withOrientation: .vertical)
+        stackView.spacing = 20
+        // Padding and spacing
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        
         let offlineRow = RowView(title: "Offline", isOn: false)
         let offlineSublabel = makeSubLabel(withText: "When you go offline, you'll only be able to play the music and podcasts you've downloaded.")
         let crossfadeView = CrossfadeView()
@@ -59,37 +66,37 @@ class Challenge: UIViewController {
         hideSongsRow.translatesAutoresizingMaskIntoConstraints = false
         normalizationRow.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(offlineRow)
-        view.addSubview(offlineSublabel)
-        view.addSubview(crossfadeView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        
+        stackView.addArrangedSubview(offlineRow)
+        stackView.addArrangedSubview(offlineSublabel)
+        stackView.addArrangedSubview(crossfadeView)
+        stackView.addArrangedSubview(gaplessRow)
+        stackView.addArrangedSubview(hideSongsRow)
+        stackView.addArrangedSubview(normalizationRow)
 
-        view.addSubview(gaplessRow)
-        view.addSubview(hideSongsRow)
-        view.addSubview(normalizationRow)
+        // Pinning to the sides of view
+        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
-        offlineRow.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: margin).isActive = true
-        offlineRow.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
-        offlineRow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
-        offlineSublabel.topAnchor.constraint(equalTo: offlineRow.bottomAnchor, constant: margin).isActive = true
-        offlineSublabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
-        offlineSublabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
+        // Pinning scrollview
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
-        crossfadeView.topAnchor.constraint(equalTo: offlineSublabel.bottomAnchor, constant: margin).isActive = true
-        crossfadeView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
-        crossfadeView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
+    }
+    
+    func makeScrollView() -> UIScrollView {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         
-        gaplessRow.topAnchor.constraint(equalTo: crossfadeView.bottomAnchor, constant: margin).isActive = true
-        gaplessRow.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
-        gaplessRow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
-        
-        hideSongsRow.topAnchor.constraint(equalTo: gaplessRow.bottomAnchor, constant: margin).isActive = true
-        hideSongsRow.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
-        hideSongsRow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
-
-        normalizationRow.topAnchor.constraint(equalTo: hideSongsRow.bottomAnchor, constant: margin).isActive = true
-        normalizationRow.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin).isActive = true
-        normalizationRow.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin).isActive = true
+        return scrollView
     }
 }
 
