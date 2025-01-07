@@ -47,10 +47,14 @@ class BlueView: UIView {
     }
     
     func adjustConstraints() {
-        if UIApplication.shared.statusBarOrientation.isPortrait {
+        if UIDevice.current.orientation.isPortrait {
             // Fill in these values here
+            topAnchorConstraint.isActive = true
+            centerYAnchorConstraint.isActive = false
         } else {
             // Fill in these values here
+            topAnchorConstraint.isActive = false
+            centerYAnchorConstraint.isActive = true
         }
     }
     
