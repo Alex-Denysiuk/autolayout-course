@@ -57,7 +57,7 @@ class AdjustSpacersBlueView: UIView {
     }
 
     func adjustConstraints() {
-        if UIApplication.shared.statusBarOrientation.isPortrait {
+        if UIDevice.current.orientation.isPortrait {
             topSpacer.isHidden = true
             bottomSpacer.isHidden = true
         } else {
